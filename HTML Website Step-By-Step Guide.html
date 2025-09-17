@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step-by-Step Guide: Publishing Your HTML Presentations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            /* Add padding to the bottom to prevent content from being hidden by the fixed nav */
+            padding-bottom: 120px;
+        }
+        .step-card {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .step-card.active {
+            display: block;
+            opacity: 1;
+        }
+        .code-block {
+            background-color: #1f2937;
+            color: #d1d5db;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.875rem;
+        }
+        .info-box {
+            background-color: #eef2ff;
+            border-left: 4px solid #4f46e5;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+        }
+        .info-box p {
+            color: #374151;
+        }
+        .troubleshooting-box {
+             background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+        }
+         .success-box {
+             background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+        }
+        /* New styles for the fixed navigation */
+        #fixed-nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border: 1px solid #e5e7eb;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-900">The Ultimate Guide to Sharing HTML Presentations</h1>
+            <p class="text-lg text-gray-600 mt-2">Go from a local file to a professional, shareable link with an email button. No coding knowledge required.</p>
+        </header>
+
+        <div id="guide-container" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200">
+            
+            <div id="step-0" class="step-card active">
+                <h2 class="text-2xl font-bold mb-4">Let's Get Started!</h2>
+                <p class="mb-4">This interactive guide will walk you through two main parts:</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li><strong>Publishing Your Presentation Online:</strong> We'll use a free service called GitHub Pages to turn your local HTML file into a live, public website link.</li>
+                    <li><strong>Creating a Clickable Email Button:</strong> We'll create a professional button for your Gmail signature that links directly to your live presentation.</li>
+                </ol>
+                <p class="text-gray-600">Click the "Next Step" button to advance through the guide. You can't break anything, so let's begin!</p>
+            </div>
+
+            <div id="step-1" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 1, Step 1: Create a Free GitHub Account</h2>
+                <p class="mb-4">GitHub is a platform that lets you store and share code. We'll use its free website hosting feature.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>Go to <a href="https://github.com/signup" target="_blank" class="text-indigo-600 font-semibold hover:underline">github.com/signup</a>.</li>
+                    <li>Follow the on-screen instructions to create your free account.</li>
+                    <li>Once you are signed in and see the main dashboard, you are ready for the next step.</li>
+                </ol>
+            </div>
+            
+            <div id="step-2" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 1, Step 2: Create a New "Repository"</h2>
+                <p class="mb-4">A repository (or "repo") is just a project folder for your files.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>On your GitHub dashboard, click the green <strong>"Create repository"</strong> button, or find the <strong>"+"</strong> icon in the top-right corner and select "New repository".</li>
+                    <li>Give your repository a short, memorable name (e.g., `client-report`).</li>
+                    <li>Ensure the repository is set to <strong>Public</strong>. This is required for the website to be free.</li>
+                    <li>Check the box that says <strong>"Add a README file"</strong>.</li>
+                    <li>Click the final <strong>"Create repository"</strong> button.</li>
+                </ol>
+            </div>
+
+            <div id="step-3" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 1, Step 3: Upload Your HTML File</h2>
+                <p class="mb-4">Now, let's add your presentation file to the project.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>Inside your new repository, click the <strong>"Add file"</strong> button and choose <strong>"Upload files"</strong>.</li>
+                    <li>Drag and drop your HTML presentation file (e.g., `ConnexionPointAnalysis.html`) onto the page.</li>
+                    <li>Scroll to the bottom and click the green <strong>"Commit changes"</strong> button. (This is just GitHub's way of saying "Save").</li>
+                </ol>
+            </div>
+            
+            <div id="step-4" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 1, Step 4: Activate GitHub Pages</h2>
+                <p class="mb-4">This is the final step where you "turn on" the website feature.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>In your repository, click on the <strong>"Settings"</strong> tab.</li>
+                    <li>In the left sidebar, click on <strong>"Pages"</strong>.</li>
+                    <li>Under "Branch", select <strong>`main`</strong> from the dropdown menu and leave the folder as `/root`.</li>
+                    <li>Click <strong>"Save"</strong>.</li>
+                </ol>
+                <div class="info-box">
+                    <p><strong>Heads Up:</strong> After saving, the page may take 1-5 minutes to update. It will then show a green box at the top saying "Your site is live at..." with your public URL.</li>
+                </div>
+            </div>
+
+            <div id="step-5" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 1, Step 5: Get Your Correct URL</h2>
+                <p class="mb-4">This is the most important step to get right. Your URL must include the full filename at the end.</p>
+                 <p class="mb-4">The correct structure is:</p>
+                <div class="code-block">https://<span class="text-green-400">{your-username}</span>.github.io/<span class="text-yellow-400">{repository-name}</span>/<span class="text-red-400">{your-filename.html}</span></div>
+                <div class="troubleshooting-box">
+                    <h3 class="font-bold text-amber-800">Common Mistake & Fix</h3>
+                    <p class="text-amber-700 mt-2">If your page is blank, it's almost always because the URL is missing the filename. The link GitHub gives you often stops at the repository name.</p>
+                    <p class="font-semibold text-amber-700 mt-2"><strong>Incorrect:</strong> https://username.github.io/client-report/</p>
+                    <p class="font-semibold text-amber-700"><strong>Correct:</strong> https://username.github.io/client-report/ConnexionPointAnalysis.html</p>
+                </div>
+                <p class="font-bold">You now have a live link! The next step is an optional pro-tip to make this link even better.</p>
+            </div>
+            
+            <div id="step-6" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 1, Step 6 (Optional): Create a Shorter URL</h2>
+                <p class="mb-4">If you prefer a cleaner URL without the `.html` filename at the end, you can rename your file to `index.html`. Web servers automatically look for this file name.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>Go to the main page of your repository (the <strong>"Code"</strong> tab).</li>
+                    <li>Click on your HTML file (e.g., `ConnexionPointAnalysis.html`) in the file list.</li>
+                    <li>In the top-right corner of the file view, click the **pencil icon** (Edit this file).</li>
+                    <li>At the top, change the filename from whatever it is to exactly <strong>`index.html`</strong>.</li>
+                    <li>Scroll to the bottom and click the green <strong>"Commit changes"</strong> button.</li>
+                </ol>
+                <div class="success-box">
+                    <h3 class="font-bold text-green-800">Result</h3>
+                    <p class="text-green-700 mt-2">After waiting a minute for the update, your shorter URL will work automatically.</p>
+                    <p class="font-semibold text-green-700 mt-2"><strong>New Shorter URL:</strong> https://username.github.io/client-report/</p>
+                </div>
+            </div>
+
+            <div id="step-7" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 2, Step 1: Prepare Your Button Code</h2>
+                <p class="mb-4">Now let's create the button that will link to your live site.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>Copy the HTML code below into a simple text editor (like Notepad or TextEdit).</li>
+                    <li>Replace the placeholder `href` URL with <strong>your actual live GitHub URL</strong>. (Use the short one if you completed the optional step!)</li>
+                </ol>
+                <div class="code-block">
+&lt;a href="<span class="text-yellow-400">https://your-username.github.io/repo-name/</span>"
+   style="background-color: #4f46e5; color: #ffffff; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-family: sans-serif; font-size: 16px; font-weight: bold; display: inline-block;"&gt;
+   View Your Interactive Report
+&lt;/a&gt;
+                </div>
+                 <p class="mt-4">Keep this code handy for the next step.</p>
+            </div>
+
+            <div id="step-8" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 2, Step 2: Insert the Button in Gmail</h2>
+                <p class="mb-4">Gmail doesn't have a simple "Insert HTML" button, so we'll use a clever trick with the browser's developer tools. It looks technical, but it's just a copy-and-paste job.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>In Gmail, compose a new email.</li>
+                    <li>In the email body, type a unique placeholder, like `INSERT_BUTTON_HERE`.</li>
+                    <li><strong>Highlight</strong> your placeholder text with your mouse.</li>
+                    <li><strong>Right-click</strong> on the highlighted text and select <strong>"Inspect"</strong> from the menu. A code panel will open.</li>
+                </ol>
+            </div>
+
+            <div id="step-9" class="step-card">
+                <h2 class="text-2xl font-bold mb-4">Part 2, Step 3: Edit HTML and Paste</h2>
+                 <p class="mb-4">You're almost there! Just a few more clicks.</p>
+                <ol class="list-decimal list-inside space-y-2 mb-6">
+                    <li>In the "Inspect" panel, you will see a line of code highlighted (it will contain your placeholder text).</li>
+                    <li><strong>Right-click</strong> on that specific highlighted line.</li>
+                    <li>From the menu, choose <strong>"Edit as HTML"</strong>.</li>
+                    <li>A text box will appear. <strong>Delete everything</strong> inside it.</li>
+                    <li><strong>Paste your button code</strong> (from the previous step) into this box.</li>
+                    <li>Click anywhere outside the code box or close the "Inspect" panel by clicking the `X`.</li>
+                </ol>
+                <p class="font-bold">Success! Your professional, clickable button should now be visible in your email draft.</p>
+            </div>
+
+            <div id="step-10" class="step-card">
+                <h2 class="text-2xl font-bold text-green-600 mb-4">You're All Set!</h2>
+                <p class="mb-4">You have successfully learned how to:</p>
+                 <ul class="list-disc list-inside space-y-2 mb-6">
+                    <li>Turn any local HTML file into a live, shareable website for free.</li>
+                    <li>Troubleshoot and fix the most common issue (a blank page due to an incorrect URL).</li>
+                    <li>Optionally rename your file to get a cleaner, more professional URL.</li>
+                    <li>Create and embed a professional, clickable button in your emails to provide clients with a seamless viewing experience.</li>
+                </ul>
+                <p class="text-gray-600">You can keep this guide for future reference. To start over, just refresh the page.</p>
+            </div>
+        </div>
+
+        <footer class="text-center mt-8 text-gray-500 text-sm">
+            <p>A dynamically generated guide by Gemini.</p>
+        </footer>
+    </div>
+    
+    <div id="fixed-nav">
+        <button id="prev-btn" class="px-6 py-2 text-sm font-semibold bg-gray-200 text-gray-700 rounded-md shadow-sm hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>Previous</button>
+        <span id="step-counter" class="text-sm font-medium text-gray-500">Step 0 of 10</span>
+        <button id="next-btn" class="px-6 py-2 text-sm font-semibold bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700">Next Step &rarr;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentStep = 0;
+            const totalSteps = document.querySelectorAll('.step-card').length -1;
+            const stepCards = document.querySelectorAll('.step-card');
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const stepCounter = document.getElementById('step-counter');
+
+            function updateView() {
+                // Scroll to the top of the guide container on step change
+                document.getElementById('guide-container').scrollIntoView({ behavior: 'smooth' });
+
+                stepCards.forEach((card, index) => {
+                    if (index === currentStep) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+                
+                stepCounter.textContent = `Step ${currentStep} of ${totalSteps}`;
+                
+                if (currentStep === 0) {
+                    prevBtn.disabled = true;
+                } else {
+                    prevBtn.disabled = false;
+                }
+
+                if (currentStep === totalSteps) {
+                    nextBtn.textContent = 'Finish';
+                } else {
+                    nextBtn.textContent = 'Next Step →';
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateView();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateView();
+                }
+            });
+
+            updateView(); // Initial call
+        });
+    </script>
+</body>
+</html>
